@@ -1,0 +1,5 @@
+﻿Gjorde ett försök att fixa funktionaliteten får att nå upp till VG-kraven. Tror jag har fått med allt, inklusive
+- 4 tabeller (även om tabellen 'Status' egentligen skulle ha varit en enum, hmm)
+- Går att skriva tidsstämplad kommentar (även om jag gjorde tidsstämpeln fel och inte hade tid att fixa den)
+- Går att se kommentarer kopplade till ett specifikt ärende
+

@@ -22,10 +22,11 @@ namespace TaskSystem.ConsoleUI.Services
 
             Console.Clear();
             Console.WriteLine(" ~~~~~((( TASK MANAGER APP )))~~~~~ \n");
-            Console.WriteLine(  "Log in by typing your Staff ID in the console \n" +
+            Console.WriteLine("Log in by typing your Staff ID in the console \n" +
                                 "and pressing 'enter'. If you have forgotten \n" +
                                 "your Staff ID, you can find your name in the \n" +
-                                "list provided below.\n");
+                                "list provided below.\n" +
+                                "To exit the Task Manager App, type 'Q'.");
 
             display.DisplayStaffListShort(staffList);
             Console.Write("\nYour Staff ID: ");
@@ -40,6 +41,11 @@ namespace TaskSystem.ConsoleUI.Services
                     Console.ReadLine();
                     Console.Clear();
                     LogInView();
+                    break;
+                case "Q":
+                    Console.WriteLine("Thank you for using the Task Manager App! Press enter to exit...");
+                    Console.ReadLine();
+                    Environment.Exit(0);
                     break;
                 case string caseValue when staffList.Any(sl => sl.Id.ToString() == caseValue):
                     var user = staffList.Single(sl => sl.Id.ToString() == caseValue);
@@ -354,13 +360,21 @@ namespace TaskSystem.ConsoleUI.Services
             switch (input)
             {
                 case "1":
-                    //AdminSeeAllStaffView(user);
+                    // Didn't have time to finish this functionality...
+                    // AdminSeeAllStaffView(user)
+                    Console.WriteLine("This option is currently not available! Press enter to continue");
+                    Console.ReadLine();
+                    AdminMenuView(user);
                     break;
                 case "2":
                     AdminSeeAllTasksView(user);
                     break;
                 case "3":
-                    //AdminViewSortedTasksView(user);
+                    // Didn't have time to finish this functionality...
+                    //AdminSeeSortedTasksView(user);
+                    Console.WriteLine("This option is currently not available! Press enter to continue");
+                    Console.ReadLine();
+                    AdminMenuView(user);
                     break;
                 case "00":
                     LogInView();
